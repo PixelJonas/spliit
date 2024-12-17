@@ -11,7 +11,7 @@ COPY ./package.json \
 COPY ./scripts ./scripts
 COPY ./prisma ./prisma
 
-RUN apk add --no-cache openssl && \
+RUN apt install libssl-dev && \
     npm ci --ignore-scripts && \
     npx prisma generate
 
